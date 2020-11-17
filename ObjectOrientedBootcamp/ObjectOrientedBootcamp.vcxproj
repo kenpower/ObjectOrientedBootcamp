@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Chance.cpp" />
     <ClCompile Include="ObjectOrientedBootcamp.cpp" />
     <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Chance.h" />
     <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
