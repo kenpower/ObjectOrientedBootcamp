@@ -1,29 +1,19 @@
 #include "pch.h"
 #include "../Quantity/Distance.h"
-
 TEST(Distance, equality) {
-	DistanceUnit foot(0.3048);
-	DistanceUnit inch(0.3048 / 12);
-	DistanceUnit km(1000);
-	DistanceUnit mile(1610);
 
+	Distance oneFoot(1, DistanceUnit::Foot);
+	Distance twoFoot(2, DistanceUnit::Foot);
+	Distance twelveInches(12, DistanceUnit::Inch);
+	Distance tenInches(10, DistanceUnit::Inch);
+	Distance oneMileAsKm(1.610, DistanceUnit::Km);
+	Distance oneMile(1, DistanceUnit::Mile);
 
-	Distance oneFoot(1, foot);
-	Distance twelveInches(12, inch);
-	Distance tenInches(10, inch);
-	Distance one_sixKm(1.610, km);
-	Distance oneMile(1, mile);
-
-
-	
 	EXPECT_EQ(oneFoot, oneFoot);
 	EXPECT_EQ(oneFoot, twelveInches);
-	EXPECT_EQ(one_sixKm, oneMile);
+	EXPECT_EQ(oneMileAsKm, oneMile);
 
-
-
-
-	EXPECT_NE(oneFoot, tenInches);
+	EXPECT_NE(oneFoot, twoFoot);
 }
 
 
