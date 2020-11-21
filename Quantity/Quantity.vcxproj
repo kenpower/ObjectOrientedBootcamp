@@ -139,14 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DistanceUnit.cpp" />
+    <ClCompile Include="Unit.cpp" />
     <ClCompile Include="Quantity.cpp" />
-    <ClCompile Include="Volume.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Distance.h" />
-    <ClInclude Include="DistanceUnit.h" />
-    <ClInclude Include="Volume.h" />
+    <ClInclude Include="Quantity.h" />
+    <ClInclude Include="Unit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

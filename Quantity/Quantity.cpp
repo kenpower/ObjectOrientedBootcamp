@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "Distance.h"
+#include "Quantity.h"
 
 int main()
 {
