@@ -2,11 +2,17 @@
 #include "../Quantity/Distance.h"
 
 TEST(Distance, equality) {
-	Distance oneFoot(1, Distance::FOOT);
-	Distance twelveInches(12, Distance::INCH);
-	Distance tenInches(10, Distance::INCH);
-	Distance one_sixKm(1.610, Distance::KM);
-	Distance oneMile(1, Distance::MILE);
+	DistanceUnit foot(0.3048);
+	DistanceUnit inch(0.3048 / 12);
+	DistanceUnit km(1000);
+	DistanceUnit mile(1610);
+
+
+	Distance oneFoot(1, foot);
+	Distance twelveInches(12, inch);
+	Distance tenInches(10, inch);
+	Distance one_sixKm(1.610, km);
+	Distance oneMile(1, mile);
 
 
 	
@@ -19,3 +25,5 @@ TEST(Distance, equality) {
 
 	EXPECT_NE(oneFoot, tenInches);
 }
+
+
