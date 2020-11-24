@@ -10,7 +10,6 @@ private:
 	Unit unit;
 
 	double toBase() const{
-		
 		return unit.toBase(amount);
 	}
 
@@ -20,8 +19,10 @@ public:
 		amount(amount), unit(unit) {}
 
 	bool operator==(const Quantity& other) const { 
-		return toBase() == other.toBase();
+		return  unit.comparableWith(other.unit) 
+			&& (toBase() == other.toBase());
 	}
+
 	bool operator!=(const Quantity& other) const {
 		return !(*this == other);
 	}

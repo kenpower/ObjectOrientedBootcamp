@@ -36,10 +36,9 @@ TEST(Volume, equality) {
 
 TEST(VolumeDistance, inEquality) {
 	Quantity oneLitre(1, Unit::Litre);
-	Quantity oneMetre(1, Unit::Meter);
+	Quantity oneMeter(1, Unit::Meter);
 
-	EXPECT_NE(oneLitre, oneMetre);
-
+	EXPECT_NE(oneLitre, oneMeter);
 }
 
 

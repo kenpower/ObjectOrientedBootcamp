@@ -1,10 +1,12 @@
 #pragma once
 class Unit
 {
-	Unit(double ratioToBase)
-		:ratioToBase(ratioToBase) {};
-	
 	double ratioToBase;
+
+	enum class UnitType {Distance, Volume} unitType;
+
+	Unit(double ratioToBase, UnitType unitType)
+		:ratioToBase(ratioToBase), unitType(unitType) {};
 
 public:
 	static Unit Foot;
@@ -18,9 +20,12 @@ public:
 	static Unit Litre;
 	static Unit Gallon;
 
-
 	double toBase(double amount) const{
 		return amount * ratioToBase;
+	}
+
+	bool comparableWith(Unit other) const {
+		return unitType == other.unitType;
 	}
 };
 
