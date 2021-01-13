@@ -4,10 +4,16 @@
 class Chance
 {
 	static constexpr double CERTAINTY{ 1 };
+	static constexpr double IMPOSSIBLE{ 0 };
+
 	double likelihood;
 
 public:
-	Chance(double likelihood) :likelihood(likelihood) {}
+	Chance(double likelihood) :likelihood(likelihood) {
+		if (likelihood < IMPOSSIBLE || likelihood > CERTAINTY) {
+			throw std::range_error("Invalid likelihood");
+		}
+	}
 
 	Chance not_() const { return Chance(CERTAINTY - likelihood);  }
 	
@@ -24,9 +30,9 @@ public:
 		return (notThis.and_(notOther)).not_();  //Churn
 	}
 
-	friend std::ostream& operator<< (std::ostream& stream, const Chance& chance) {
-		stream << "Chance(" << chance.likelihood << ")"; 
-		return stream;
-	}
+	//friend std::ostream& operator<< (std::ostream& stream, const Chance& chance) {
+	//	stream << "Chance(" << chance.likelihood << ")"; 
+	//	return stream;
+	//}
 };
 
